@@ -1,9 +1,9 @@
 # Запуск
 
 
-> git pull https://github.com/kirgo-t4-test/OTUP_adm-prof_homework.git
-> cd 19_docker
-> docker-compose up -d
+ git pull https://github.com/kirgo-t4-test/OTUP_adm-prof_homework.git
+ cd 19_docker
+ docker-compose up -d
 
 http://localhost
 
