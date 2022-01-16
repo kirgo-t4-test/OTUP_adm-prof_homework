@@ -1,0 +1,26 @@
+version: "3"
+
+services: 
+  nginx:
+    image: kirgot4test/nginx_test1
+    container_name: nginx
+    ports: 
+      - "80:80"
+    environment:
+      - PHP_SERVER=php
+      - PHP_SCRIPT_DIR=$PHP_SCRIPT_DIR
+    networks:
+      - www
+
+  php:
+    image: kirgot4test/php_test1
+    container_name: php
+    environment:
+      - PHP_SCRIPT_DIR=$PHP_SCRIPT_DIR
+    networks:
+      - www
+
+networks:
+  www:
+
+    

@@ -1,0 +1,17 @@
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	# Everything is a 404
+	location / {
+		include fastcgi_params;
+		fastcgi_pass  ${PHP_SERVER}:9000;
+		fastcgi_index index.php;
+		fastcgi_param  SCRIPT_FILENAME  ${PHP_SCRIPT_DIR}$fastcgi_script_name;
+	}
+
+	# You may need this to prevent return 404 recursion.
+	location = /404.html {
+		internal;
+	}
+}
